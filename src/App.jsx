@@ -1,15 +1,21 @@
-import { useState } from 'react'
-
-
-
+//import { useState } from 'react'
+import {BrowserRouter, Route, Routes} from "react-router-dom"
+import CryptoHome from './pages/CryptoHome'
+import CryptoDetail from './pages/CryptoDetail'
+import Navbar from './components/Navbar'
 function App() {
 
 
   return (
-    <div className="App">
-      <h1 className="text-center">App</h1>
-    </div>
+    <BrowserRouter>
+    <Navbar />
+    <Routes>
+      <Route path="/" element={<CryptoHome />} /> 
+      <Route path="/coin/:id" element={<CryptoDetail />} />
+    </Routes>
+
+    </BrowserRouter>
   )
 }
 
-export default App
+export default App;
